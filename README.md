@@ -13,7 +13,6 @@ This is the set of starter files for Nathan Thomas' [GraphQL Article]().
   - `cors`
   - `dotenv`
   - `helmet`
-  - `morgan`
   - `faker`
   - `graphql`
   - `graphql-playground-middleware-express`
