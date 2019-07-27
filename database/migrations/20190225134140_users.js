@@ -2,7 +2,6 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('users', tbl => {
     tbl.increments('id');
     tbl.string('username', 128).notNull();
-    tbl.string('password', 256).notNull();
     tbl.string('firstName', 256);
     tbl.string('middleName', 256);
     tbl.string('lastName', 256);

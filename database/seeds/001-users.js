@@ -1,6 +1,6 @@
 const faker = require('faker');
 
-exports.seed = function(knex, Promise) {
+exports.seed = function(knex) {
   return knex('users')
     .del()
     .then(function() {
