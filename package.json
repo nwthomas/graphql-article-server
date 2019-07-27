@@ -1,7 +1,7 @@
 {
-  "name": "express-graphql-postgresql",
+  "name": "graphql-article-server",
   "version": "1.0.0",
-  "description": "A boilerplate server using Express, PostgreSQL, and GraphQL",
+  "description": "The files for Nathan Thomas' GraphQL article",
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js",
@@ -11,7 +11,8 @@
   "keywords": [
     "GraphQL",
     "PostgreSQL",
-    "Express"
+    "Express",
+    "Nathan Thomas"
   ],
   "author": "Nathan Thomas",
   "license": "MIT",
@@ -25,7 +26,6 @@
     "graphql-playground-middleware-express": "^1.7.12",
     "helmet": "^3.19.0",
     "knex": "^0.19.0",
-    "knex-cleaner": "^1.2.1",
     "morgan": "^1.9.1",
     "pg": "^7.11.0"
   },

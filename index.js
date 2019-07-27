@@ -1,5 +1,5 @@
 const server = require('./api/server.js');
-require('dotenv').config(); // Config .env
+require('dotenv').config();
 
 const port = process.env.PORT || 8000; // Dynamic port assignment via .env
 
