@@ -1,29 +1,31 @@
 const db = require('../database/dbConfig.js');
 
 function find() {
-  return db('users');
+  return db('candy');
 }
 
 function findById(id) {
-  return db('users')
+  return db('candy')
     .where({ id })
     .first();
 }
 
-async function insert(user) {
-  const [id] = await db('users').insert(user, 'id');
-  return findById(id);
+function findByUserId(userId) {
+  return db('candy').where({ userId });
 }
 
-async function update(id, changes) {
-  await db('users')
+function insert(candy) {
+  return db('candy').insert(candy);
+}
+
+function update(id, changes) {
+  return db('candy')
     .where({ id })
     .update(changes);
-  return findById(id);
 }
 
 function remove(id) {
-  return db('users')
+  return db('candy')
     .where({ id })
     .del();
 }
@@ -31,6 +33,7 @@ function remove(id) {
 module.exports = {
   find,
   findById,
+  findByUserId,
   insert,
   update,
   remove
