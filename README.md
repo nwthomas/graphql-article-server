@@ -1,6 +1,6 @@
 # GRAPHQL ARTICLE SERVER
 
-This is the set of starter files for Nathan Thomas' [GraphQL Article](). Note that this server does not satisfactorily run on initial clone. You will need to follow along in my article to flesh it out.
+This is the set of starter files for Nathan Thomas' [GraphQL Article](https://hackernoon.com/building-your-first-graphql-server-exbh3wpq). Note that this server does not satisfactorily run on initial clone. You will need to follow along in my article to flesh it out.
 
 ## GETTING STARTED
 
