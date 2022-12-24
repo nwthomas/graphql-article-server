@@ -1,9 +1,9 @@
 const express = require('express');
 const applyMiddleware = require('./middleware.js');
-const graphqlHTTP = require('express-graphql');
+const { graphqlHTTP } = require('express-graphql');
 const schema = require('../schema/schema.js');
-const expressPlayground = require('graphql-playground-middleware-express')
-  .default;
+const expressPlayground =
+  require('graphql-playground-middleware-express').default;
 const server = express();
 
 // Configure middleware for server
@@ -23,7 +23,7 @@ server.use(
   '/graphql',
   graphqlHTTP({
     schema,
-    graphiql: false // Turns off graphiql for GraphQL Playground use
+    graphiql: false, // Turns off graphiql for GraphQL Playground use
   })
 );
 

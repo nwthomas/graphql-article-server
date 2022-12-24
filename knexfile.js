@@ -9,15 +9,15 @@ module.exports = {
     connection: process.env.DATABASE_URL,
     migrations: {
       directory: './database/migrations',
-      tablename: 'knex_migrations'
+      tablename: 'knex_migrations',
     },
     seeds: {
-      directory: './database/seeds'
+      directory: './database/seeds',
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
-    useNullAsDefault: true
-  }
+    useNullAsDefault: true,
+  },
 };

@@ -7,7 +7,7 @@ const {
   GraphQLID,
   GraphQLString,
   GraphQLNonNull,
-  GraphQLList
+  GraphQLList,
 } = graphql;
 
 const UserType = new GraphQLObjectType({
@@ -28,9 +28,9 @@ const UserType = new GraphQLObjectType({
       type: new GraphQLList(CandyType),
       resolve(parent, args) {
         return Candy.findByUserId(parent.id);
-      }
-    }
-  })
+      },
+    },
+  }),
 });
 
 const CandyType = new GraphQLObjectType({
@@ -43,12 +43,12 @@ const CandyType = new GraphQLObjectType({
       type: UserType,
       resolve(parent, args) {
         return User.findById(parent.userId);
-      }
-    }
-  })
+      },
+    },
+  }),
 });
 
 module.exports = {
   UserType,
-  CandyType
+  CandyType,
 };

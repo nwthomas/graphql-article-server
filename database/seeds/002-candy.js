@@ -1,7 +1,7 @@
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   return knex('candy')
     .del()
-    .then(function() {
+    .then(function () {
       return knex('candy').insert([
         { candyName: 'Chocolate', userId: 1 },
         { candyName: 'Chocolate Cake', userId: 5 },
@@ -12,7 +12,7 @@ exports.seed = function(knex) {
         { candyName: 'Apple Pie', userId: 2 },
         { candyName: 'Cherry Pie', userId: 4 },
         { candyName: 'Coffee Cake', userId: 1 },
-        { candyName: 'Licorice', userId: 5 }
+        { candyName: 'Licorice', userId: 5 },
       ]);
     });
 };

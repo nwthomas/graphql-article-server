@@ -1,9 +1,9 @@
 const faker = require('faker');
 
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   return knex('users')
     .del()
-    .then(function() {
+    .then(function () {
       return knex('users').insert([
         {
           username: 'admin',
@@ -16,7 +16,7 @@ exports.seed = function(knex) {
           street2: null,
           city: 'Hill Valley',
           state: 'CA',
-          zip: 94000
+          zip: 94000,
         },
         {
           username: faker.fake('{{internet.userName}}'),
@@ -29,7 +29,7 @@ exports.seed = function(knex) {
           street2: null,
           city: faker.fake('{{address.city}}'),
           state: faker.fake('{{address.state}}'),
-          zip: faker.fake('{{address.zipCode}}')
+          zip: faker.fake('{{address.zipCode}}'),
         },
         {
           username: faker.fake('{{internet.userName}}'),
@@ -42,7 +42,7 @@ exports.seed = function(knex) {
           street2: null,
           city: faker.fake('{{address.city}}'),
           state: faker.fake('{{address.state}}'),
-          zip: faker.fake('{{address.zipCode}}')
+          zip: faker.fake('{{address.zipCode}}'),
         },
         {
           username: faker.fake('{{internet.userName}}'),
@@ -55,7 +55,7 @@ exports.seed = function(knex) {
           street2: null,
           city: faker.fake('{{address.city}}'),
           state: faker.fake('{{address.state}}'),
-          zip: faker.fake('{{address.zipCode}}')
+          zip: faker.fake('{{address.zipCode}}'),
         },
         {
           username: faker.fake('{{internet.userName}}'),
@@ -68,8 +68,8 @@ exports.seed = function(knex) {
           street2: null,
           city: faker.fake('{{address.city}}'),
           state: faker.fake('{{address.state}}'),
-          zip: faker.fake('{{address.zipCode}}')
-        }
+          zip: faker.fake('{{address.zipCode}}'),
+        },
       ]);
     });
 };

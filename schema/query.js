@@ -13,7 +13,7 @@ const RootQuery = new GraphQLObjectType({
       description: 'Gets all users',
       resolve() {
         return User.find()
-          .then(res => {
+          .then((res) => {
             if (res.length) {
               return res;
             }
@@ -22,7 +22,7 @@ const RootQuery = new GraphQLObjectType({
           .catch(() => {
             return new Error('There was an error completing your request.');
           });
-      }
+      },
     },
     getUserById: {
       type: UserType,
@@ -30,7 +30,7 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: new GraphQLNonNull(GraphQLID) } },
       resolve(parent, args) {
         return User.findById(args.id)
-          .then(res => {
+          .then((res) => {
             if (res) {
               return res;
             }
@@ -39,14 +39,14 @@ const RootQuery = new GraphQLObjectType({
           .catch(() => {
             return new Error('There was an error completing your request.');
           });
-      }
+      },
     },
     getAllCandy: {
       type: new GraphQLList(CandyType),
       description: 'Gets all candy',
       resolve() {
         return Candy.find()
-          .then(res => {
+          .then((res) => {
             if (res.length) {
               return res;
             }
@@ -55,7 +55,7 @@ const RootQuery = new GraphQLObjectType({
           .catch(() => {
             return new Error('There was an error completing your request.');
           });
-      }
+      },
     },
     getCandyById: {
       type: CandyType,
@@ -63,18 +63,18 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: new GraphQLNonNull(GraphQLID) } },
       resolve(parent, args) {
         return Candy.findById(args.id)
-          .then(res => {
+          .then((res) => {
             if (res) {
               return res;
             }
             return new Error('The candy could not be found.');
           })
-          .catch(err => {
+          .catch((err) => {
             return new Error('There was an error completing your request.');
           });
-      }
-    }
-  }
+      },
+    },
+  },
 });
 
 module.exports = RootQuery;

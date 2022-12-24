@@ -19,11 +19,11 @@ const Mutation = new GraphQLObjectType({
         state: { type: GraphQLString },
         zip: { type: GraphQLString },
         type: { type: GraphQLString },
-        phone: { type: GraphQLString }
+        phone: { type: GraphQLString },
       },
       resolve(parent, args) {
         return User.insert(args)
-          .then(res => {
+          .then((res) => {
             if (res) {
               return res;
             }
@@ -32,7 +32,7 @@ const Mutation = new GraphQLObjectType({
           .catch(() => {
             return new Error('There was an error completing your request.');
           });
-      }
+      },
     },
     updateUser: {
       type: UserType,
@@ -47,11 +47,11 @@ const Mutation = new GraphQLObjectType({
         state: { type: GraphQLString },
         zip: { type: GraphQLString },
         type: { type: GraphQLString },
-        phone: { type: GraphQLString }
+        phone: { type: GraphQLString },
       },
       resolve(parent, args) {
         return User.update(args.id, args)
-          .then(res => {
+          .then((res) => {
             if (res) {
               return res;
             }
@@ -60,18 +60,18 @@ const Mutation = new GraphQLObjectType({
           .catch(() => {
             return new Error('There was an error completing your request.');
           });
-      }
+      },
     },
     deleteUser: {
       type: UserType,
       args: {
-        id: { type: new GraphQLNonNull(GraphQLID) }
+        id: { type: new GraphQLNonNull(GraphQLID) },
       },
       resolve(parent, args) {
         return User.remove(args.id);
-      }
-    }
-  })
+      },
+    },
+  }),
 });
 
 module.exports = Mutation;

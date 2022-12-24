@@ -5,9 +5,7 @@ function find() {
 }
 
 function findById(id) {
-  return db('candy')
-    .where({ id })
-    .first();
+  return db('candy').where({ id }).first();
 }
 
 function findByUserId(userId) {
@@ -19,15 +17,11 @@ function insert(candy) {
 }
 
 function update(id, changes) {
-  return db('candy')
-    .where({ id })
-    .update(changes);
+  return db('candy').where({ id }).update(changes);
 }
 
 function remove(id) {
-  return db('candy')
-    .where({ id })
-    .del();
+  return db('candy').where({ id }).del();
 }
 
 module.exports = {
@@ -36,5 +30,5 @@ module.exports = {
   findByUserId,
   insert,
   update,
-  remove
+  remove,
 };
