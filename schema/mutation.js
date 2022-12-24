@@ -1,11 +1,11 @@
-const graphql = require('graphql');
-const User = require('../models/userModel.js');
-const { UserType } = require('./types.js');
+const graphql = require("graphql");
+const User = require("../models/userModel.js");
+const { UserType } = require("./types.js");
 
 const { GraphQLString, GraphQLNonNull, GraphQLID, GraphQLObjectType } = graphql;
 
 const Mutation = new GraphQLObjectType({
-  name: 'Mutation',
+  name: "Mutation",
   fields: () => ({
     addUser: {
       type: UserType,
@@ -27,10 +27,10 @@ const Mutation = new GraphQLObjectType({
             if (res) {
               return res;
             }
-            return new Error('The new user could not be created.');
+            return new Error("The new user could not be created.");
           })
           .catch(() => {
-            return new Error('There was an error completing your request.');
+            return new Error("There was an error completing your request.");
           });
       },
     },
@@ -55,10 +55,10 @@ const Mutation = new GraphQLObjectType({
             if (res) {
               return res;
             }
-            return new Error('The user could not be updated.');
+            return new Error("The user could not be updated.");
           })
           .catch(() => {
-            return new Error('There was an error completing your request.');
+            return new Error("There was an error completing your request.");
           });
       },
     },

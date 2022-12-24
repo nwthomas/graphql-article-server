@@ -1,6 +1,6 @@
-const graphql = require('graphql');
-const User = require('../models/userModel.js');
-const Candy = require('../models/candyModel.js');
+const graphql = require("graphql");
+const User = require("../models/userModel.js");
+const Candy = require("../models/candyModel.js");
 
 const {
   GraphQLObjectType,
@@ -11,7 +11,7 @@ const {
 } = graphql;
 
 const UserType = new GraphQLObjectType({
-  name: 'User',
+  name: "User",
   fields: () => ({
     id: { type: GraphQLID },
     username: { type: new GraphQLNonNull(GraphQLString) },
@@ -34,7 +34,7 @@ const UserType = new GraphQLObjectType({
 });
 
 const CandyType = new GraphQLObjectType({
-  name: 'Candy',
+  name: "Candy",
   fields: () => ({
     id: { type: GraphQLID },
     candyName: { type: new GraphQLNonNull(GraphQLString) },

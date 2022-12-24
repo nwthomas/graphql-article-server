@@ -1,18 +1,18 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const pg = require('pg');
+const pg = require("pg");
 pg.defaults.ssl = true;
 
 module.exports = {
   development: {
-    client: 'pg',
+    client: "pg",
     connection: process.env.DATABASE_URL,
     migrations: {
-      directory: './database/migrations',
-      tablename: 'knex_migrations',
+      directory: "./database/migrations",
+      tablename: "knex_migrations",
     },
     seeds: {
-      directory: './database/seeds',
+      directory: "./database/seeds",
     },
     pool: {
       min: 2,
